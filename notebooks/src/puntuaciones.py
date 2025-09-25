@@ -15,3 +15,12 @@ def inicializar_acumulados(lista_equipos):
                  "puntos": 0}
         for equipo in lista_equipos
     }
+
+def actualizar_acumulados(acumulados, ronda, mejor_equipo):
+    for equipo, datos_equipo in ronda.items():
+        acumulados[equipo]["innovacion"] += datos_equipo["innovacion"]
+        acumulados[equipo]["presentacion"] += datos_equipo["presentacion"]
+        acumulados[equipo]["errores"] += int(datos_equipo["errores"])
+        acumulados[equipo]["puntos"] += puntos_por_equipo(datos_equipo)
+
+    acumulados[mejor_equipo]["mejores"] += 1
