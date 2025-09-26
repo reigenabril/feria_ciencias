@@ -1,24 +1,21 @@
+def mostrar_encabezado():
+    print("Resultados de la Feria de Ciencias - Sistema de Evaluación\n")
 
-def mostrar_ronda(indice, ronda, mejor_equipo, puntaje, funcion_puntos):
-    print(f"\n--- Ronda {indice} ---")
-    for equipo, datos in ronda.items():
-        print(f"{equipo:10} → {funcion_puntos(datos)} puntos "
-              f"(innovación={datos['innovacion']}, "
-              f"presentación={datos['presentacion']}, "
-              f"errores={datos['errores']})")
+def mostrar_ronda(indice, mejor_equipo, puntaje):
+    print(f"Ronda {indice}")
+    print(f"Mejor Equipo de la Ronda: {mejor_equipo} ({puntaje} puntos)")
+    print("Ranking Actualizado")
 
-    print(f">>> Ganador: {mejor_equipo} con {puntaje} puntos <<<")
-
-
-def mostrar_resultados_finales(acumulados):
-    print("\n--- RESULTADOS FINALES ---")
-    print(f"{'Equipo':10} | {'Innovación':10} | {'Presentación':12} | {'Errores':7} | {'Mejores':8} | {'Puntos':6}")
-    print("-" * 70)
+def mostrar_tabla(acumulados):
+    encabezado = f"{'Equipo':10} | {'Innovación':10} | {'Presentación':12} | {'Errores':7} | {'Mejores':14} | {'Puntos Total':12}"
+    print(encabezado)
+    print("-" * len(encabezado))
 
     for equipo, datos in acumulados.items():
         print(f"{equipo:10} | "
               f"{datos['innovacion']:10} | "
               f"{datos['presentacion']:12} | "
               f"{datos['errores']:7} | "
-              f"{datos['mejores']:8} | "
-              f"{datos['puntos']:6}")
+              f"{datos['mejores']:14} | "
+              f"{datos['puntos']:12}")
+    print()
