@@ -35,8 +35,7 @@ def actualizar_acumulados(acumulados, ronda, mejor_equipo):
 
     for equipo, datos_equipo in ronda.items():
         acumulados[equipo]["innovacion"] += datos_equipo["innovacion"]
-        acumulados[equipo]["presentacion"] += datos_equipo["presentacion"]
-        
+        acumulados[equipo]["presentacion"] += datos_equipo["presentacion"] 
     acumulados[mejor_equipo]["mejores"] += 1
 
 def puntos_totales_acumulados(datos_equipo):

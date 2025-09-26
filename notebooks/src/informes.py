@@ -25,7 +25,13 @@ def mostrar_tabla(acumulados):
     print(encabezado)
     print("-" * len(encabezado))
 
-    for equipo, datos in acumulados.items():
+    equipos_ordenados = sorted(
+        acumulados.items(),
+        key=lambda par: puntos_totales_acumulados(par[1]),
+        reverse=True
+    )
+
+    for equipo, datos in equipos_ordenados:
         puntos = puntos_totales_acumulados(datos)
         print(f"{equipo:10} | "
               f"{datos['innovacion']:10} | "
