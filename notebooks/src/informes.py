@@ -2,8 +2,9 @@ def mostrar_encabezado():
     print("Resultados de la Feria de Ciencias - Sistema de Evaluación\n")
 
 def mostrar_ronda(indice, mejor_equipo, puntaje):
-    print(f"Ronda {indice}")
-    print(f"Mejor Equipo de la Ronda: {mejor_equipo} ({puntaje} puntos)")
+    print("-" * 80)
+    print(f">>> RONDA {indice}")
+    print(f"Mejor Equipo de la Ronda:{mejor_equipo} ({puntaje} puntos)")
     print("Ranking Actualizado")
 
 def rondas_restantes(indice):
