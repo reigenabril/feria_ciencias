@@ -1,9 +1,10 @@
+from src.puntuaciones import puntos_totales_acumulados
 """
 todas las funciones imprimen resultados parciales y finales o muestran encabezados.
 """
 
 def mostrar_encabezado():
-    print("Resultados de la Feria de Ciencias - Sistema de Evaluación\n")
+    print("Resultados de la Feria de Ciencias\n")
 
 def mostrar_ronda(indice, mejor_equipo, puntaje):
     print("-" * 80)
@@ -25,10 +26,11 @@ def mostrar_tabla(acumulados):
     print("-" * len(encabezado))
 
     for equipo, datos in acumulados.items():
+        puntos = puntos_totales_acumulados(datos)
         print(f"{equipo:10} | "
               f"{datos['innovacion']:10} | "
               f"{datos['presentacion']:12} | "
               f"{datos['errores']:7} | "
               f"{datos['mejores']:14} | "
-              f"{datos['puntos']:12}")
+              f"{puntos:12}")
     print()
