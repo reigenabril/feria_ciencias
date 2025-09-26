@@ -1,3 +1,7 @@
+"""
+todas las funciones imprimen resultados parciales y finales o muestran encabezados.
+"""
+
 def mostrar_encabezado():
     print("Resultados de la Feria de Ciencias - Sistema de Evaluación\n")
 
