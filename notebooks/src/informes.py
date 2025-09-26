@@ -6,6 +6,14 @@ def mostrar_ronda(indice, mejor_equipo, puntaje):
     print(f"Mejor Equipo de la Ronda: {mejor_equipo} ({puntaje} puntos)")
     print("Ranking Actualizado")
 
+def rondas_restantes(indice):
+    restantes = 5 - indice
+    if restantes > 0:
+        print(f"Rondas restantes: {restantes}")
+    else:
+        print("No quedan rondas restantes.")
+
+
 def mostrar_tabla(acumulados):
     encabezado = f"{'Equipo':10} | {'Innovación':10} | {'Presentación':12} | {'Errores':7} | {'Mejores':14} | {'Puntos Total':12}"
     print(encabezado)
